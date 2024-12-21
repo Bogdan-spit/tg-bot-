@@ -1,0 +1,52 @@
+import asyncio  
+import logging  
+from aiogram import Bot, Dispatcher, types  
+from aiogram.filters.command import Command  
+from configs import Config 
+from aiogram import F, Router
+from random import randint 
+from aiogram.utils.keyboard import ReplyKeyboardBuilder 
+from aiogram.utils.keyboard import InlineKeyboardBuilder 
+import sqlite3
+
+from teext import *
+
+
+router = Router()
+
+
+
+
+@router.callback_query(F.data == "A1") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(str(A1)) 
+    
+        
+
+@router.callback_query(F.data == "A2") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(str(A2)) 
+
+@router.callback_query(F.data == "B1") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(str(B1)) 
+
+@router.callback_query(F.data == "B2") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(str(B2)) 
+
+@router.callback_query(F.data == "C1") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(str(C1)) 
+
+@router.callback_query(F.data == "C2") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(str(C2)) 
+
+@router.callback_query(F.data == "D1")
+async def send_random_value(callback: types.CallbackQuery):  
+    await callback.message.answer(str(D1)) 
+
+@router.callback_query(F.data == "D2") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(str(D2)) 
