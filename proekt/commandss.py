@@ -36,26 +36,26 @@ async def cmd_start(message: types.Message):
 
 
 
-# @router.message(Command("help")) 
-# async def cmd_start(message: types.Message): 
-#     kb = [ 
-#         [ 
+@router.message(Command("help")) 
+async def cmd_start(message: types.Message): 
+    kb = [ 
+        [ 
             
-#             types.KeyboardButton(text="Укусы"),
-#             types.KeyboardButton(text="Не укусы"),
-#             types.KeyboardButton(text="хз"),
-#             # types.KeyboardButton(text="start"),
-#             types.KeyboardButton(text="спс"),
+            types.KeyboardButton(text="Укусы"),
+            types.KeyboardButton(text="Не укусы"),
+            types.KeyboardButton(text="хз"),
+            # types.KeyboardButton(text="start"),
+            types.KeyboardButton(text="спс"),
             
             
-#         ], 
-#     ] 
-#     keyboard = types.ReplyKeyboardMarkup( 
-#         keyboard=kb, 
-#         resize_keyboard=True, 
-#         input_field_placeholder="Текст вместо 'Massage'" 
-#     ) 
-#     await message.answer("умный тест хз", reply_markup=keyboard) 
+        ], 
+    ] 
+    keyboard = types.ReplyKeyboardMarkup( 
+        keyboard=kb, 
+        resize_keyboard=True, 
+        input_field_placeholder="Текст вместо 'Massage'" 
+    ) 
+    await message.answer("умный тест хз", reply_markup=keyboard) 
 
 def payment_keyboard():
     types.KeyboardButton(text="Советы"),
