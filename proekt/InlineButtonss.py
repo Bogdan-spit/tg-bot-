@@ -18,8 +18,8 @@ router = Router()
 
 
 
-@router.message(F.text.lower() == "первая помощь")
-async def first_aid(message: types.Message):
+@router.message(F.text.lower() == "первая помощь") 
+async def first_aid(message: types.Message): 
     builder = InlineKeyboardBuilder() 
     builder.row( 
         types.InlineKeyboardButton(text="Ушиб", callback_data="A1" 
@@ -41,9 +41,13 @@ async def first_aid(message: types.Message):
         types.InlineKeyboardButton(text="Укусы", callback_data="D1"),
         types.InlineKeyboardButton(text="Прыщи", callback_data="D2"),
     )
-    return builder
+    await message.answer(text="Ответ в формате текста", reply_markup=builder.as_markup())
+    
 
 
+
+
+    
 
 
 
@@ -153,34 +157,31 @@ async def forum_three(message: types.Message):
 
 
 
-# def forum_four(message: types.Message): 
-#     builder = InlineKeyboardBuilder() 
-#     builder.row( 
-#         types.InlineKeyboardButton(text="Ссылка1", callback_data="A1"),
-#         types.InlineKeyboardButton(text="Ссылка2", callback_data="A2" ),
-#         types.InlineKeyboardButton(text="Ссылка3", callback_data="A3")
-#         )
+def forum_four(message: types.Message): 
+    builder = InlineKeyboardBuilder() 
+    builder.row( 
+        types.InlineKeyboardButton(text="Ссылка1", callback_data="A1"),
+        types.InlineKeyboardButton(text="Ссылка2", callback_data="A2" ),
+        types.InlineKeyboardButton(text="Ссылка3", callback_data="A3")
+        )
 
-#     builder.row( 
-#         types.InlineKeyboardButton(text="Ссылка1", callback_data="B1"),
-#         types.InlineKeyboardButton(text="Ссылка2", callback_data="B2" ),
-#         types.InlineKeyboardButton(text="Ссылка3", callback_data="B3")
-#         )
-#     builder.row( 
-#         types.InlineKeyboardButton(text="Ссылка1", callback_data="C1"),
-#         types.InlineKeyboardButton(text="Ссылка2", callback_data="C2" ),
-#         types.InlineKeyboardButton(text="Ссылка3", callback_data="C3")
-#     )
-#     builder.row( 
-#         types.InlineKeyboardButton(text="Ссылка1", callback_data="D1"),
-#         types.InlineKeyboardButton(text="Ссылка2", callback_data="D2" ),
-#         types.InlineKeyboardButton(text="Ссылка3", callback_data="D3")
-#     )
+    builder.row( 
+        types.InlineKeyboardButton(text="Ссылка1", callback_data="B1"),
+        types.InlineKeyboardButton(text="Ссылка2", callback_data="B2" ),
+        types.InlineKeyboardButton(text="Ссылка3", callback_data="B3")
+        )
+    builder.row( 
+        types.InlineKeyboardButton(text="Ссылка1", callback_data="C1"),
+        types.InlineKeyboardButton(text="Ссылка2", callback_data="C2" ),
+        types.InlineKeyboardButton(text="Ссылка3", callback_data="C3")
+    )
+    builder.row( 
+        types.InlineKeyboardButton(text="Ссылка1", callback_data="D1"),
+        types.InlineKeyboardButton(text="Ссылка2", callback_data="D2" ),
+        types.InlineKeyboardButton(text="Ссылка3", callback_data="D3")
+    )
 
-    # await message.answer( 
-    #     "Ссылки:", 
-    #     reply_markup=builder.as_markup() 
-    # ) 
+
 
 
 
@@ -318,3 +319,4 @@ async def xt(message: types.Message):
         "Soveti3:", 
         reply_markup=builder.as_markup() 
     ) 
+
