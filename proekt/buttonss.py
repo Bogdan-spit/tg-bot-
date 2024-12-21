@@ -3,7 +3,7 @@ import logging
 from aiogram import Bot, Dispatcher, types  
 from aiogram.filters.command import Command  
 from configs import Config 
-from aiogram import F 
+from aiogram import F, Router
 from random import randint 
 from aiogram.utils.keyboard import ReplyKeyboardBuilder 
 from aiogram.utils.keyboard import InlineKeyboardBuilder 
@@ -12,11 +12,10 @@ import sqlite3
 
 
 
-logging.basicConfig(level=logging.INFO)  
-dp = Dispatcher()  
+router = Router() 
 
 
-@dp.message(Command("start")) 
+@router.message(Command("start")) 
 async def cmd_start(message: types.Message): 
     kb = [ 
         [ 
@@ -39,7 +38,7 @@ async def cmd_start(message: types.Message):
 
 
 
-@dp.message(F.text.lower() == "test") 
+@router.message(F.text.lower() == "test") 
 async def cmd_special_buttons(message: types.Message): 
     builder = ReplyKeyboardBuilder() 
     builder.row( 
@@ -65,7 +64,7 @@ async def cmd_special_buttons(message: types.Message):
 
 
 
-@dp.message(F.text.lower() == "назад") 
+@router.message(F.text.lower() == "назад") 
 async def with_puree(message: types.Message): 
     kb = [ 
         [ 
@@ -86,32 +85,32 @@ async def with_puree(message: types.Message):
 
 
 
-@dp.message(Command("help")) 
 
 
 
-@dp.message(Command("help")) 
-async def cmd_start(message: types.Message): 
-    kb = [ 
-        [ 
+
+# @router.message(Command("help")) 
+# async def cmd_start(message: types.Message): 
+#     kb = [ 
+#         [ 
             
-            types.KeyboardButton(text="Укусы"),
-            types.KeyboardButton(text="Не укусы"),
-            types.KeyboardButton(text="хз"),
-            # types.KeyboardButton(text="start"),
-            types.KeyboardButton(text="спс"),
+#             types.KeyboardButton(text="Укусы"),
+#             types.KeyboardButton(text="Не укусы"),
+#             types.KeyboardButton(text="хз"),
+#             # types.KeyboardButton(text="start"),
+#             types.KeyboardButton(text="спс"),
             
             
-        ], 
-    ] 
-    keyboard = types.ReplyKeyboardMarkup( 
-        keyboard=kb, 
-        resize_keyboard=True, 
-        input_field_placeholder="Текст вместо 'Massage'" 
-    ) 
-    await message.answer("умный тест хз", reply_markup=keyboard) 
+#         ], 
+#     ] 
+#     keyboard = types.ReplyKeyboardMarkup( 
+#         keyboard=kb, 
+#         resize_keyboard=True, 
+#         input_field_placeholder="Текст вместо 'Massage'" 
+#     ) 
+#     await message.answer("умный тест хз", reply_markup=keyboard) 
 
-@dp.message(F.text.lower() == "назад") 
+@router.message(F.text.lower() == "назад") 
 async def with_puree(message: types.Message): 
     kb = [ 
         [ 
