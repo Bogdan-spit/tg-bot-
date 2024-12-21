@@ -13,6 +13,8 @@ from teext import *
 from buttonss import *
 from InlineButtonss import *
 import commandss
+import InlineButtonss
+import buttonss
 
 
 import asyncio  
@@ -38,12 +40,12 @@ dp = Dispatcher()
 
 
 
-@dp.message(F.text.lower() == "первая помощь") 
-async def cmd_first(message: Message, state: FSMContext):
-    await message.answer(
-        text="Ответ в формате текста",
-        reply_markup=first_aid().as_markup
-    )
+# @dp.message(F.text.lower() == "первая помощь") 
+# async def cmd_first(message: Message, state: FSMContext):
+#     await message.answer(
+#         text="Ответ в формате текста",
+#         reply_markup=first_aid().as_markup
+#     )
 
 
 
@@ -86,20 +88,17 @@ async def send_random_value(callback: types.CallbackQuery):
     await callback.message.answer(str(D2)) 
 
 
-
-
-
-
-
-
-
 async def main():  
     dp.include_router(commandss.router)
+    dp.include_router(InlineButtonss.router)
+    dp.include_router(buttonss.router)
     await dp.start_polling(bot) 
     
 
 if __name__ == "__main__":  
     asyncio.run(main())
+
+
 
 
 
