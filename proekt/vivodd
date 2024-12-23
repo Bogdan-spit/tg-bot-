@@ -19,34 +19,40 @@ router = Router()
 
 @router.callback_query(F.data == "A1") 
 async def send_random_value(callback: types.CallbackQuery): 
-    await callback.message.answer(str(A1)) 
-    
-        
+    await callback.message.answer(
+        text = answers['A1'])
 
 @router.callback_query(F.data == "A2") 
 async def send_random_value(callback: types.CallbackQuery): 
-    await callback.message.answer(str(A2)) 
+    await callback.message.answer(
+        text = answers['A2'])
 
 @router.callback_query(F.data == "B1") 
 async def send_random_value(callback: types.CallbackQuery): 
-    await callback.message.answer(str(B1)) 
+    await callback.message.answer(
+        text = answers['B1'])
 
 @router.callback_query(F.data == "B2") 
 async def send_random_value(callback: types.CallbackQuery): 
-    await callback.message.answer(str(B2)) 
+    await callback.message.answer(
+        text = answers['B2'])
 
 @router.callback_query(F.data == "C1") 
 async def send_random_value(callback: types.CallbackQuery): 
-    await callback.message.answer(str(C1)) 
+    await callback.message.answer(
+        text = answers['C1'])
 
 @router.callback_query(F.data == "C2") 
 async def send_random_value(callback: types.CallbackQuery): 
-    await callback.message.answer(str(C2)) 
+    await callback.message.answer(
+        text = answers['C2'])
 
 @router.callback_query(F.data == "D1")
 async def send_random_value(callback: types.CallbackQuery):  
-    await callback.message.answer(str(D1)) 
+    await callback.message.answer(
+        text = answers['D1'])
 
 @router.callback_query(F.data == "D2") 
 async def send_random_value(callback: types.CallbackQuery): 
-    await callback.message.answer(str(D2)) 
+    await callback.message.answer(
+        text = answers['D2'])
