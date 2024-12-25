@@ -28,7 +28,7 @@ import sqlite3
 
 
 logging.basicConfig(level=logging.INFO)  
-bot = Bot(token="7942694780:AAEDRJqWBnKbiAx1p99Kt7sW_YGtczeQGuM")  
+bot = Bot(token="TOKEN")  
 dp = Dispatcher()  
 
 
