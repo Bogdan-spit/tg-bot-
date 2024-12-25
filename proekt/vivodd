@@ -12,6 +12,9 @@ import sqlite3
 from teext import *
 
 
+
+
+
 router = Router()
 
 
@@ -56,3 +59,46 @@ async def send_random_value(callback: types.CallbackQuery):
 async def send_random_value(callback: types.CallbackQuery): 
     await callback.message.answer(
         text = answers['D2'])
+
+
+@router.callback_query(F.data == "A3") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(
+        text = answers['A3'])
+    
+@router.callback_query(F.data == "A4") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(
+        text = answers['A4'])
+    
+@router.callback_query(F.data == "B3") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(
+        text = answers['B3'])
+    
+@router.callback_query(F.data == "B4") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(
+        text = answers['B4'])
+    
+@router.callback_query(F.data == "C3") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(
+        text = answers['C3'])
+    
+
+@router.callback_query(F.data == "C4") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(
+        text = answers['C4'])
+    
+@router.callback_query(F.data == "D3") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(
+        text = answers['D3'])
+    
+
+@router.callback_query(F.data == "D4") 
+async def send_random_value(callback: types.CallbackQuery): 
+    await callback.message.answer(
+        text = answers['D4'])
