@@ -1,4 +1,3 @@
-
 import asyncio  
 import logging  
 from aiogram import Bot, Dispatcher, types  
@@ -38,7 +37,6 @@ async def first_aid(message: types.Message):
 
     ) 
     builder.row(
-        types.InlineKeyboardButton(text="Укусы", callback_data="D1"),
         types.InlineKeyboardButton(text="Прыщи", callback_data="D2"),
     )
     await message.answer(text="Ответ в формате текста", reply_markup=builder.as_markup())
@@ -47,7 +45,7 @@ async def first_aid(message: types.Message):
 
 
 
-    
+
 
 
 
@@ -240,7 +238,7 @@ async def forum_five(message: types.Message):
 
 
 @router.message(F.text.lower() == "форум2") 
-async def sgeadhtgh(message: types.Message): 
+async def wehegiuwbgiubgg(message: types.Message): 
     builder = InlineKeyboardBuilder() 
     builder.row( 
         types.InlineKeyboardButton( 
@@ -281,3 +279,9 @@ async def sgeadhtgh(message: types.Message):
         "Soveti2:", 
         reply_markup=builder.as_markup() 
     ) 
+
+
+
+
+
+
