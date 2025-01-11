@@ -20,7 +20,7 @@ async def cmd_start(message: types.Message):
             
             types.KeyboardButton(text="Первая помощь"),
             types.KeyboardButton(text="Основы ЗОЖ"),
-            types.KeyboardButton(text="test"),
+
             
             
         ], 
@@ -30,7 +30,7 @@ async def cmd_start(message: types.Message):
         resize_keyboard=True, 
         input_field_placeholder="Текст вместо 'Massage'" 
     ) 
-    await message.answer("Опции кнопок клавиатуры?", reply_markup=keyboard) 
+    await message.answer("Выберите раздел:", reply_markup=keyboard) 
 
 
 
