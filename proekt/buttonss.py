@@ -15,47 +15,9 @@ import sqlite3
 router = Router() 
 
 
-@router.message(Command("start")) 
-async def cmd_start(message: types.Message): 
-    kb = [ 
-        [ 
-            
-            types.KeyboardButton(text="Первая помощь"),
-            types.KeyboardButton(text="test229"),
-            types.KeyboardButton(text="test230"),
-            # types.KeyboardButton(text="start"),
-            types.KeyboardButton(text="test"),
-            
-            
-        ], 
-    ] 
-    keyboard = types.ReplyKeyboardMarkup( 
-        keyboard=kb, 
-        resize_keyboard=True, 
-        input_field_placeholder="Текст вместо 'Massage'" 
-    ) 
-    await message.answer("Опции кнопок клавиатуры?", reply_markup=keyboard) 
 
 
 
-@router.message(F.text.lower() == "test") 
-async def cmd_special_buttons(message: types.Message): 
-    builder = ReplyKeyboardBuilder() 
-    builder.row( 
-        types.KeyboardButton(text="Форум"), 
-        types.KeyboardButton(text="Форум2"), 
-        types.KeyboardButton(text="Форум3"), 
-
-    ) 
-
-    builder.row( 
-        types.KeyboardButton(text="Назад") 
-    ) 
-
-    await message.answer( 
-        "Выберите действие:", 
-        reply_markup=builder.as_markup(resize_keyboard=True), 
-    ) 
 
 
 
@@ -67,7 +29,7 @@ async def with_puree(message: types.Message):
         [ 
             types.KeyboardButton(text="Первая помощь"),
             types.KeyboardButton(text="Основы ЗОЖ"),
-            types.KeyboardButton(text="test"),
+
         ], 
     ] 
     keyboard = types.ReplyKeyboardMarkup( 
@@ -75,7 +37,7 @@ async def with_puree(message: types.Message):
         resize_keyboard=True, 
         input_field_placeholder="Текст вместо 'Massage'" 
     ) 
-    await message.reply("Мы снова здесь", reply_markup=keyboard) 
+    await message.reply("Вы вернулись в меню выбора.", reply_markup=keyboard) 
 
 
 
@@ -87,13 +49,13 @@ async def with_puree(message: types.Message):
 
 
 @router.message(F.text.lower() == "первая помощь") 
-async def cmd_special_buttons(message: types.Message): 
+async def arrhrtjrjrhrththg(message: types.Message): 
     builder = ReplyKeyboardBuilder() 
     builder.row( 
         types.KeyboardButton(text="Кожные повреждения"), 
         types.KeyboardButton(text="Укусы"), 
-        types.KeyboardButton(text="Форум3"), 
-        types.KeyboardButton(text="Форум4"), 
+        types.KeyboardButton(text="Помощь при инсульте"), 
+
 
         
     ) 
@@ -104,9 +66,12 @@ async def cmd_special_buttons(message: types.Message):
     ) 
 
     await message.answer( 
-        "Выберите действие:", 
+        "Выберите интересующую проблему:", 
         reply_markup=builder.as_markup(resize_keyboard=True), 
     ) 
+
+
+
 
 
 
