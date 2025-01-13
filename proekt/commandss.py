@@ -1,12 +1,6 @@
-import asyncio  
-import logging  
-from aiogram import Bot, Dispatcher, types  
+from aiogram import types  
 from aiogram.filters.command import Command  
-from configs import Config 
-from aiogram.utils.keyboard import ReplyKeyboardBuilder 
-from aiogram.utils.keyboard import InlineKeyboardBuilder 
-import sqlite3
-from aiogram import Router, F
+from aiogram import Router
 
 
 
@@ -31,6 +25,10 @@ async def cmd_start(message: types.Message):
         input_field_placeholder="Текст вместо 'Massage'" 
     ) 
     await message.answer("Выберите раздел:", reply_markup=keyboard) 
+
+
+
+
 
 
 
