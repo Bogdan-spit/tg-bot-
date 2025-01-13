@@ -1,13 +1,6 @@
-import asyncio  
-import logging  
-from aiogram import Bot, Dispatcher, types  
-from aiogram.filters.command import Command  
-from configs import Config 
+from aiogram import types  
 from aiogram import F, Router
-from random import randint 
 from aiogram.utils.keyboard import ReplyKeyboardBuilder 
-from aiogram.utils.keyboard import InlineKeyboardBuilder 
-import sqlite3
 
 
 
@@ -55,6 +48,7 @@ async def arrhrtjrjrhrththg(message: types.Message):
         types.KeyboardButton(text="Кожные повреждения"), 
         types.KeyboardButton(text="Укусы"), 
         types.KeyboardButton(text="Помощь при инсульте"), 
+        types.KeyboardButton(text="Помощь при потере сознания")
 
 
         
@@ -69,6 +63,10 @@ async def arrhrtjrjrhrththg(message: types.Message):
         "Выберите интересующую проблему:", 
         reply_markup=builder.as_markup(resize_keyboard=True), 
     ) 
+
+
+
+
 
 
 
