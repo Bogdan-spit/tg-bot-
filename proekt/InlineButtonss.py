@@ -1,13 +1,6 @@
-import asyncio  
-import logging  
-from aiogram import Bot, Dispatcher, types  
-from aiogram.filters.command import Command  
-from configs import Config 
+from aiogram import types  
 from aiogram import F, Router 
-from random import randint 
-from aiogram.utils.keyboard import ReplyKeyboardBuilder 
 from aiogram.utils.keyboard import InlineKeyboardBuilder 
-import sqlite3
 from teext import *
 
 
@@ -117,21 +110,11 @@ async def healthy_iifestyle(message: types.Message):
             url="https://cgon.rospotrebnadzor.ru/naseleniyu/zdorovyy-obraz-zhizni/lichnaya-gigiena/"
             ),
         types.InlineKeyboardButton(
-            text="Ссылка2", 
+            text="Избавление от вредных привычек", 
             callback_data="C2",
-            url=""
+            url="https://dszn.ru/press-center/news/3357"
             ),
         )
-    builder.row( 
-        types.InlineKeyboardButton(
-            text="Ссылка1", 
-            callback_data="D1"
-            ),
-        types.InlineKeyboardButton(
-            text="Ссылка2", 
-            callback_data="D2"
-            ),
-    )
     await message.answer(text="Ответ в формате URL", reply_markup=builder.as_markup())
 
 
@@ -238,7 +221,7 @@ async def forum_five(message: types.Message):
 
 
 @router.message(F.text.lower() == "форум2") 
-async def wehegiuwbgiubgg(message: types.Message): 
+async def erhehehhhhggfgg(message: types.Message): 
     builder = InlineKeyboardBuilder() 
     builder.row( 
         types.InlineKeyboardButton( 
@@ -279,8 +262,6 @@ async def wehegiuwbgiubgg(message: types.Message):
         "Soveti2:", 
         reply_markup=builder.as_markup() 
     ) 
-
-
 
 
 
