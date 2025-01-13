@@ -1,13 +1,5 @@
-import asyncio  
-import logging  
-from aiogram import Bot, Dispatcher, types  
-from aiogram.filters.command import Command  
-from configs import Config 
+from aiogram import types  
 from aiogram import F, Router
-from random import randint 
-from aiogram.utils.keyboard import ReplyKeyboardBuilder 
-from aiogram.utils.keyboard import InlineKeyboardBuilder 
-import sqlite3
 
 from teext import *
 
@@ -105,10 +97,14 @@ async def send_random_value(callback: types.CallbackQuery):
     
 
 
-
-
-
 @router.message(F.text.lower() == "помощь при инсульте") 
 async def stoyka(message: types.Message): 
     await message.answer(
         text = answers['D5'])
+    
+
+
+@router.message(F.text.lower() == "помощь при потере сознания") 
+async def stoyka(message: types.Message): 
+    await message.answer(
+        text = answers['D6'])
