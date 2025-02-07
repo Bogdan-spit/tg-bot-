@@ -5,8 +5,6 @@ from teext import *
 
 
 
-
-
 router = Router()
 
 
