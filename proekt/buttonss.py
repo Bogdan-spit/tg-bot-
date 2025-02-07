@@ -42,7 +42,7 @@ async def with_puree(message: types.Message):
 
 
 @router.message(F.text.lower() == "первая помощь") 
-async def arrhrtjrjrhrththg(message: types.Message): 
+async def rwsguewrigbweioubgwosubg(message: types.Message): 
     builder = ReplyKeyboardBuilder() 
     builder.row( 
         types.KeyboardButton(text="Кожные повреждения"), 
@@ -63,10 +63,6 @@ async def arrhrtjrjrhrththg(message: types.Message):
         "Выберите интересующую проблему:", 
         reply_markup=builder.as_markup(resize_keyboard=True), 
     ) 
-
-
-
-
 
 
 
